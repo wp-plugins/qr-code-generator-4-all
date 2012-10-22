@@ -3,8 +3,8 @@
 Plugin Name: QR Generator 4 All
 Plugin URI: http://www.internetloesungen.com/en/qr-generator-4-all/
 Description: Create and embed QR Code images, offer QR generator to your user.
-Version: 1.0.2
-Author: Roland Littwin
+Version: 1.0.3
+Author: Internetloesungen.com
 Author URI: http://www.internetloesungen.com/en/
 License: GPLv2 or later
 */
