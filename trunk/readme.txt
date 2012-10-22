@@ -4,7 +4,7 @@ Donate link:
 Tags: QR Code
 Requires at least: 3.4.0
 Tested up to: 3.4.2
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,8 @@ Create and embed QR Code images, offer QR generator to your user. Can also rende
 
 == Description ==
 
+<p>With our free plugin QR Code Generator 4 All we give all website owners the ability to integrate a comfortable
+QR code generator in your website with a shortcode snippet. So you provide your customers a real added value.</p>
 <p>QR Codes (Quick Response Codes) are coded graphics, that can be read by current smartphones
 and tablets with the appropriate software. They form a bridge between the real and the virtual world.
 Nowadays it's hard to find advertisements without this code. With one scan you are directed to a website,
@@ -63,11 +65,19 @@ Yes, private and commercial use and printing are allowed.
 
 == Changelog ==
 
+= 1.0.3 =
+
+* Update on text change added.
+
 = 1.0.2 =
 
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+
+Update on text change added.
 
 = 1.0.2 =
 
