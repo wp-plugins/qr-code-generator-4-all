@@ -55,8 +55,14 @@ imagefilledrectangle ( $img,0,0,$size,$size,$bg);
 imagecopyresized ($img,$code,$margin,$margin,0,0,$size-2*$margin,$size-2*$margin,$w,$h);
 
 //echo "Size:$size, w=$w margin=$margin";
+ob_start();
+imagepng($img);
+$imageContent = ob_get_contents();
+ob_end_clean();
 header("Content-type: image/png");
-ImagePng($img);
+header("Content-Length: " . strlen($imageContent));
+echo $imageContent; //imagepng($img);
+
 //ImagePng($code);
 imagecolordeallocate ($img,$bg);
 imagedestroy($img);
