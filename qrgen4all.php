@@ -3,7 +3,7 @@
 Plugin Name: QR Generator 4 All
 Plugin URI: http://www.internetloesungen.com/en/qr-generator-4-all/
 Description: Create and embed QR Code images, offer QR generator to your user.
-Version: 1.0.4
+Version: 1.0.5
 Author: Internetloesungen.com
 Author URI: http://www.internetloesungen.com/en/
 License: GPLv2 or later
@@ -134,14 +134,14 @@ function qrgen4all_editor($attr) {
   	$style = (empty($style) && $style !==0) ? "" : strip_tags(trim($style));
 	}
   $stoken = get_option('qrgen4all_sitetoken');
-  $customtoken="";
+  $customtoken = get_option('qrgen4all_ctoken');
   if(strlen($stoken)>10) {
     $validuntil = get_option('qrgen4all_tsv');
-    if($validuntil===FALSE || $validuntil<time()) { // Get new token
+    if($validuntil===FALSE || strlen($customtoken)<20 || strlen($customtoken)>21 || $validuntil<time()) { // Get new token
       $customtoken = file_get_contents('http://www.internetloesungen.com/wpde/wp-content/plugins/qrgen4allpro/renew-sitetoken.php?s='.urlencode($stoken));
       update_option('qrgen4all_ctoken',$customtoken);
       update_option('qrgen4all_tsv',(time()+12*3600));    
-    } else $customtoken = get_option('qrgen4all_ctoken');
+    }
   }
   wp_enqueue_script('jquery-ui-slider');
   wp_enqueue_script('jquery-ui-button');
