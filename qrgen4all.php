@@ -3,12 +3,13 @@
 Plugin Name: QR Generator 4 All
 Plugin URI: http://www.internetloesungen.com/en/qr-generator-4-all/
 Description: Create and embed QR Code images, offer QR generator to your user.
-Version: 1.0.5
+Version: 1.0.6
 Author: Internetloesungen.com
 Author URI: http://www.internetloesungen.com/en/
 License: GPLv2 or later
 */
 
+function iscurlinstalled() {return (in_array('curl', get_loaded_extensions()));}
 function qrgen4_plugin_init() {
   load_plugin_textdomain('qrgen4', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
 }
@@ -63,7 +64,9 @@ function qrgen4all_plugin_options() {
 <input type="hidden" name="page_options" value="qrgen4all_sitetoken" />
 <input type="hidden" name="action" value="update" />
 </form>
-
+<?php if(!iscurlinstalled()) { 
+_e('<h2 style="color:red">CURL library for php not installed/activated</h2><p>Custom-QR-Codes require communication with our server. This happens with the curl extension of php. Please install the extension for the full functionality.</p><p>For windows check the php.ini and search for ";extension=php_curl.dll" and remove the semicolon. Restart apache.</p><p>For Linux it depends on the distribution. For Debien, Ubuntu and clones use:</p><div style="font-family:Courier New;background:#ececec;padding:10px;margin-bottom:10px">apt-get install php5-curl<br/>/etc/init.d/apache2 restart</div><p>For suse it is:</p><div style="font-family:Courier New;background:#ececec;padding:10px;margin-bottom:10px">zypper in php5-curl<br/>rcapache2 restart</div><p>and for Red Hat, Fedora and Centos:</p><div style="font-family:Courier New;background:#ececec;padding:10px;margin-bottom:10px">yum install php-curl</div>','qrgen4');
+ } ?>
 <h2><?php _e('Implementation','qrgen4')?></h2>
 <h3><?php _e('QR Code Generator','qrgen4')?></h3>
 <p><?php _e('To implement the free configurable QR Code Generator, you just need to embed the following code:','qrgen4')?></p>
@@ -138,7 +141,16 @@ function qrgen4all_editor($attr) {
   if(strlen($stoken)>10) {
     $validuntil = get_option('qrgen4all_tsv');
     if($validuntil===FALSE || strlen($customtoken)<20 || strlen($customtoken)>21 || $validuntil<time()) { // Get new token
-      $customtoken = file_get_contents('http://www.internetloesungen.com/wpde/wp-content/plugins/qrgen4allpro/renew-sitetoken.php?s='.urlencode($stoken));
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_HEADER, 0);
+      curl_setopt($ch, CURLOPT_VERBOSE, 0);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible;)");
+      curl_setopt($ch, CURLOPT_POST, true);
+      curl_setopt($ch, CURLOPT_URL, 'http://www.internetloesungen.com/wpde/wp-content/plugins/qrgen4allpro/renew-sitetoken.php' );
+      curl_setopt($ch, CURLOPT_POSTFIELDS,array("s"=>$stoken));
+      $customtoken = curl_exec($ch);
+      //$customtoken = file_get_contents('http://www.internetloesungen.com/wpde/wp-content/plugins/qrgen4allpro/renew-sitetoken.php?s='.urlencode($stoken));
       update_option('qrgen4all_ctoken',$customtoken);
       update_option('qrgen4all_tsv',(time()+12*3600));    
     }
@@ -299,9 +311,11 @@ _e('<p>The use of Custom-QR-Codes is free of charge and royalty. You can use you
 </div>
 <hr style="background-color:#D0D0BF;border:0 none;height:1px;"/>
 <div id="qrgen4_pro" style="margin-bottom:8px">
+<?php if(iscurlinstalled()) { ?>
 <input type="radio" name="pro" id="qrgen4_pro1" value="1" checked="checked"/><label for="qrgen4_pro1"><?php _e('Standard QR Code','qrgen4')?></label>
 <input type="radio" name="pro" id="qrgen4_pro2" value="2"/><label for="qrgen4_pro2"><?php _e('Custom-QR-Code with your Logo','qrgen4')?></label>
 <span id="qrgen4_showinfo" style="white-space:nowrap;cursor:pointer;margin-left:15px;font-weight:bold"><?php _e('QR Code Info','qrgen4')?></span>
+<?php }  else echo '<input type="radio" name="pro" id="qrgen4_pro1" value="1" checked="checked" style="display:none"/>' ?>
 </div>
 
 <table style="width:100%">
@@ -311,7 +325,7 @@ _e('<p>The use of Custom-QR-Codes is free of charge and royalty. You can use you
 <tr><td><?php _e('Background&nbsp;Color','qrgen4')?>:</td><td><input type="text" name="bg" id="qrgen4_bg" size="8" value="#FFFFFF"/></td></tr> 
 <tr class="qrgen4_prodata" style="display:none"><td><?php _e('Logo','qrgen4')?>:</td><td><button id="grgen4_open_upload"><?php _e('Upload new Logo','qrgen4')?></button></td></tr>
 <tr class="qrgen4_prodata" style="display:none"><td><?php _e('Logo&nbsp;Size','qrgen4')?>:&nbsp;<span id="qrgen4_logosize_out">40</span>%</td><td><div id="qrgen4_logosize"></div></td></tr>
-<?php if($customtoken) { ?>
+<?php if($customtoken && $stoken) { ?>
 <tr><td colspan="2"><input type="submit" value="<?php _e('Update','qrgen4')?>"/>
 <input type="hidden" name="token" id="qrgen4_token" value="<?php echo $customtoken;?>"/></td></tr> 
 <?php } else { ?>
