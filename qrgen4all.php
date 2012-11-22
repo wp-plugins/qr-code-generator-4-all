@@ -3,7 +3,7 @@
 Plugin Name: QR Generator 4 All
 Plugin URI: http://www.internetloesungen.com/en/qr-generator-4-all/
 Description: Create and embed QR Code images, offer QR generator to your user.
-Version: 1.0.6
+Version: 1.0.7
 Author: Internetloesungen.com
 Author URI: http://www.internetloesungen.com/en/
 License: GPLv2 or later
@@ -264,8 +264,8 @@ _e('<p>The use of Custom-QR-Codes is free of charge and royalty. You can use you
 <option value="HOME;VOICE"><?php _e('Home','qrgen4')?></option>
 <option value="WORK;CELL"><?php _e('Mobile Work','qrgen4')?></option>
 <option value="HOME;CELL"><?php _e('Mobile Private','qrgen4')?></option>
-<option value value="WORK;FAX"><?php _e('Fax Work','qrgen4')?></option>
-<option value value="HOME;FAX"><?php _e('Fax Home','qrgen4')?></option>
+<option value="WORK;FAX"><?php _e('Fax Work','qrgen4')?></option>
+<option value="HOME;FAX"><?php _e('Fax Home','qrgen4')?></option>
 </select>
 <input type="text" name="v_tel_a" id="qrgen4_v_tel_a" size="20" maxlength="40" value=""/><br/>
 <span class="t40"><?php _e('Telephone #2','qrgen4')?>:</span>
@@ -274,8 +274,8 @@ _e('<p>The use of Custom-QR-Codes is free of charge and royalty. You can use you
 <option value="HOME;VOICE" selected="selected"><?php _e('Phone Home','qrgen4')?></option>
 <option value="WORK;CELL"><?php _e('Mobile Work','qrgen4')?></option>
 <option value="HOME;CELL"><?php _e('Mobile Private','qrgen4')?></option>
-<option value value="WORK;FAX"><?php _e('Fax Work','qrgen4')?></option>
-<option value value="HOME;FAX"><?php _e('Fax Home','qrgen4')?></option>
+<option value="WORK;FAX"><?php _e('Fax Work','qrgen4')?></option>
+<option value="HOME;FAX"><?php _e('Fax Home','qrgen4')?></option>
 </select>
 <input type="text" id="qrgen4_v_tel_b" name="v_tel_b" size="20" maxlength="40" value=""/><br/>
 <span class="t40"><?php _e('Telephone #3','qrgen4')?>:</span>
@@ -284,8 +284,8 @@ _e('<p>The use of Custom-QR-Codes is free of charge and royalty. You can use you
 <option value="HOME;VOICE"><?php _e('Phone Home','qrgen4')?></option>
 <option value="WORK;CELL"><?php _e('Mobile Work','qrgen4')?></option>
 <option value="HOME;CELL" selected="selected"><?php _e('Mobile Private','qrgen4')?></option>
-<option value value="WORK;FAX"><?php _e('Fax Work','qrgen4')?></option>
-<option value value="HOME;FAX"><?php _e('Fax Home','qrgen4')?></option>
+<option value="WORK;FAX"><?php _e('Fax Work','qrgen4')?></option>
+<option value="HOME;FAX"><?php _e('Fax Home','qrgen4')?></option>
 </select>
 <input type="text" name="v_tel_c" id="qrgen4_v_tel_c" size="20" maxlength="40" value=""/><br/>
 <span class="t40"><?php _e('Telephone #4','qrgen4')?>:</span>
@@ -294,8 +294,8 @@ _e('<p>The use of Custom-QR-Codes is free of charge and royalty. You can use you
 <option value="HOME;VOICE"><?php _e('Phone Home','qrgen4')?></option>
 <option value="WORK;CELL"><?php _e('Mobile Work','qrgen4')?></option>
 <option value="HOME;CELL"><?php _e('Mobile Private','qrgen4')?></option>
-<option value value="WORK;FAX" selected="selected"><?php _e('Fax Work','qrgen4')?></option>
-<option value value="HOME;FAX"><?php _e('Fax Home','qrgen4')?></option>
+<option value="WORK;FAX" selected="selected"><?php _e('Fax Work','qrgen4')?></option>
+<option value="HOME;FAX"><?php _e('Fax Home','qrgen4')?></option>
 </select>
 <input type="text" name="v_tel_d" id="qrgen4_v_tel_d" size="20" maxlength="40" value=""/><br/>
 <span class="t40"><?php _e('Email (Work)','qrgen4')?>: </span><input type="text" name="v_email_work" id="qrgen4_v_email_work" size="32" maxlength="64" value=""/><br/>

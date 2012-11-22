@@ -1,6 +1,8 @@
 var qr4all_prourl = 'http://www.internetloesungen.com/wpde/wp-content/plugins/qrgen4allpro/qrpro.php';
 var qrgen4all_timer = null;
 var qrgen4all_logoname = 'default.png';
+var qrgen4all_last_tp = 1;
+var qrgen4all_last_cust = 1;
 
 qrgen4all_vc_escape = function(text) {
   var l = text.length,i;
@@ -18,6 +20,7 @@ qrgen4all_update = function() {
 qrgen4all_update_token = function(sendtoken) {
   qrgen4all_timer = null;
   var sel = jQuery('input[name=tp]:checked', '#qrgen4all').val();
+  if(sel) qrgen4all_last_tp = sel; else sel = qrgen4all_last_tp;
   var data='';
   if(sel==1) data=jQuery('#qrgen4_text').val();
   if(sel==2) data=jQuery('#qrgen4_urldata').val(); 
@@ -50,9 +53,9 @@ qrgen4all_update_token = function(sendtoken) {
     if(x.length>0) {
       data+="PHOTO;VALUE=URL:"+qrgen4all_vc_escape(x)+"\n";
     }
-    data+="ADR;"+jQuery('#qrgen4_v_adrtype')+':'+qrgen4all_vc_escape(jQuery('#qrgen4_v_poaddr'))+';'+qrgen4all_vc_escape(jQuery('#qrgen4_v_extaddr').val())+';'+
+    data+="ADR;"+jQuery('#qrgen4_v_adrtype')+':'+qrgen4all_vc_escape(jQuery('#qrgen4_v_poaddr').val())+';'+qrgen4all_vc_escape(jQuery('#qrgen4_v_extaddr').val())+';'+
     qrgen4all_vc_escape(jQuery('#qrgen4_v_street').val())+';'+qrgen4all_vc_escape(jQuery('#qrgen4_v_locality').val())+';'+qrgen4all_vc_escape(jQuery('#qrgen4_v_region').val())+';'
-    +qrgen4all_vc_escape(jQuery('#qrgen4_v_postal').val())+';'+qrgen4all_vc_escape(jQuery('#qrgen4_v_country').val());
+    +qrgen4all_vc_escape(jQuery('#qrgen4_v_postal').val())+';'+qrgen4all_vc_escape(jQuery('#qrgen4_v_country').val())+"\n";
     x=jQuery('#qrgen4_v_tel_a').val();      
     if(x.length>0) data+="TEL;"+jQuery('#qrgen4_v_phonetype_a').val()+":"+qrgen4all_vc_escape(x)+"\n";
     x=jQuery('#qrgen4_v_tel_b').val();      
@@ -69,7 +72,8 @@ qrgen4all_update_token = function(sendtoken) {
     if(x.length>0) data+="URL:"+qrgen4all_vc_escape(x)+"\n";
     data+="END:VCARD";
   } 
-  var pro = jQuery('input[name=pro]:checked', '#qrgen4all').val()==2;
+  var pro = jQuery('input[name=pro]:checked', '#qrgen4all').val();
+  if(pro) {pro = pro==2;qrgen4all_last_cust = pro;} else pro = qrgen4all_last_cust;
   var sitetoken =  jQuery('#qrgen4_token').val().indexOf('S') == 0;
   var tosend;
   if(pro) {

@@ -65,6 +65,11 @@ Yes, private and commercial use and printing are allowed.
 
 == Changelog ==
 
+= 1.0.7 =
+
+* Fixed problem with Explorer < 9.
+* Fixed business card creation.
+
 = 1.0.6 =
 
 * Disable Custom-QR-Codes if required curl extension is missing.
@@ -86,6 +91,11 @@ Yes, private and commercial use and printing are allowed.
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.0.7 =
+
+* Fixed problem with Explorer < 9.
+* Fixed business card creation.
 
 = 1.0.6 =
 
