@@ -4,7 +4,7 @@ Donate link:
 Tags: QR Code
 Requires at least: 3.4.0
 Tested up to: 3.4.2
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,10 @@ Yes, private and commercial use and printing are allowed.
 
 == Changelog ==
 
+= 1.0.8 =
+
+* Fixed business card creation bug.
+
 = 1.0.7 =
 
 * Fixed problem with Explorer < 9.
@@ -91,6 +95,10 @@ Yes, private and commercial use and printing are allowed.
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.0.8 =
+
+* Fixed business card creation bug.
 
 = 1.0.7 =
 

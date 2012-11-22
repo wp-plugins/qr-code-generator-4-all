@@ -53,7 +53,7 @@ qrgen4all_update_token = function(sendtoken) {
     if(x.length>0) {
       data+="PHOTO;VALUE=URL:"+qrgen4all_vc_escape(x)+"\n";
     }
-    data+="ADR;"+jQuery('#qrgen4_v_adrtype')+':'+qrgen4all_vc_escape(jQuery('#qrgen4_v_poaddr').val())+';'+qrgen4all_vc_escape(jQuery('#qrgen4_v_extaddr').val())+';'+
+    data+="ADR;"+jQuery('#qrgen4_v_adrtype').val()+':'+qrgen4all_vc_escape(jQuery('#qrgen4_v_poaddr').val())+';'+qrgen4all_vc_escape(jQuery('#qrgen4_v_extaddr').val())+';'+
     qrgen4all_vc_escape(jQuery('#qrgen4_v_street').val())+';'+qrgen4all_vc_escape(jQuery('#qrgen4_v_locality').val())+';'+qrgen4all_vc_escape(jQuery('#qrgen4_v_region').val())+';'
     +qrgen4all_vc_escape(jQuery('#qrgen4_v_postal').val())+';'+qrgen4all_vc_escape(jQuery('#qrgen4_v_country').val())+"\n";
     x=jQuery('#qrgen4_v_tel_a').val();      
