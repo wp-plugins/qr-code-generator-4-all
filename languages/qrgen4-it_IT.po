@@ -1,0 +1,637 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: qrgen4all\n"
+"POT-Creation-Date: 2012-11-20 12:02+0100\n"
+"PO-Revision-Date: 2013-05-15 16:46+0100\n"
+"Last-Translator: \n"
+"Language-Team: Hot-World\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: c:\\www\\wordpress\\wp-content\\plugins\\qrgen4all\\\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: c:\\www\\wordpress\\wp-content\\plugins\\qrgen4all\n"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:34
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Non hai sufficienti permessi per accedere a questa pagina."
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:45
+#, php-format
+msgid "Valid until %s"
+msgstr "Valido fino al %s"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:51
+msgid "Free Custom-QR-Codes for your users"
+msgstr "QR Code personalizzati per i tuoi utenti"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:52
+#, php-format
+msgid ""
+"Normally users need a QR-Token to create a Custom-QR-Code. If you want to "
+"offer this for free to your users, you need a QR-Site-Token. You can get "
+"them <a href=\"%s\" target=\"_blank\">here</a>."
+msgstr ""
+"Solitamente gli utenti necessitano di un QR-Token per creare QR Code "
+"personalizzati. Se vuoi offrire gratuitamente questa opportunità ai tuoi "
+"utenti, ottieni un QR-Site-Token. Puoi ottenerlo <a href=\"%s\" target="
+"\"_blank\">QUI</a>."
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:57
+msgid "QR-Site-Token"
+msgstr "QR-Site-Token"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:62
+msgid "Save Changes"
+msgstr "Salva modifiche"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:68
+msgid ""
+"<h2 style=\"color:red\">CURL library for php not installed/activated</"
+"h2><p>Custom-QR-Codes require communication with our server. This happens "
+"with the curl extension of php. Please install the extension for the full "
+"functionality.</p><p>For windows check the php.ini and search for \";"
+"extension=php_curl.dll\" and remove the semicolon. Restart apache.</p><p>For "
+"Linux it depends on the distribution. For Debien, Ubuntu and clones use:</"
+"p><div style=\"font-family:Courier New;background:#ececec;padding:10px;"
+"margin-bottom:10px\">apt-get install php5-curl<br/>/etc/init.d/apache2 "
+"restart</div><p>For suse it is:</p><div style=\"font-family:Courier New;"
+"background:#ececec;padding:10px;margin-bottom:10px\">zypper in php5-curl<br/"
+">rcapache2 restart</div><p>and for Red Hat, Fedora and Centos:</p><div style="
+"\"font-family:Courier New;background:#ececec;padding:10px;margin-bottom:10px"
+"\">yum install php-curl</div>"
+msgstr ""
+"<h2 style=\"color:red\">CURL estensione per PHP non è installato / attivato</"
+"h2><p>Custom-QR-Codes require communication with our server. This happens "
+"with the curl extension of php. Please install the extension for the full "
+"functionality.</p><p>For windows check the php.ini and search for \";"
+"extension=php_curl.dll\" and remove the semicolon. Restart apache.</p><p>For "
+"Linux it depends on the distribution. For Debien, Ubuntu and clones use:</"
+"p><div style=\"font-family:Courier New;background:#ececec;padding:10px;"
+"margin-bottom:10px\">apt-get install php5-curl<br/>/etc/init.d/apache2 "
+"restart</div><p>For suse it is:</p><div style=\"font-family:Courier New;"
+"background:#ececec;padding:10px;margin-bottom:10px\">zypper in php5-curl<br/"
+">rcapache2 restart</div><p>and for Red Hat, Fedora and Centos:</p><div style="
+"\"font-family:Courier New;background:#ececec;padding:10px;margin-bottom:10px"
+"\">yum install php-curl</div>"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:70
+msgid "Implementation"
+msgstr "Implementazione"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:71
+msgid "QR Code Generator"
+msgstr "Generatore QR Code"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:72
+msgid ""
+"To implement the free configurable QR Code Generator, you just need to embed "
+"the following code:"
+msgstr ""
+"Per implementare il generatore gratuito di QR-Code, devi solamente inserire "
+"il seguente codice:"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:76
+msgid ""
+"The above version uses the full available width. To limit the width or to "
+"add a margin, you can also add style parameter:"
+msgstr ""
+"La versione sottostante utilizza una larghezza dinamica. Per limitare la "
+"larghezza o aggiungere un margine puoi utilizzare i parametri di stile:"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:81
+msgid "Dynamic QR Codes"
+msgstr "QR Code dinamici"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:82
+msgid ""
+"If you want to include dynamic generated QR Codes on your site, you can add "
+"them with the following shortcode:"
+msgstr ""
+"Se si vuole includere sul proprio sito il QR Code generato, basterà "
+"utilizzare il seguente shortcode:"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:87
+msgid "Option"
+msgstr "Opzione"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:87
+msgid "Required"
+msgstr "Richiesto"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:88
+msgid "Description"
+msgstr "Descrizione"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:89
+msgid "Yes"
+msgstr "Sì"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:89
+msgid "Content of the QR Code"
+msgstr "Contenuto del QR Code"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:90
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:91
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:92
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:93
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:94
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:95
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:96
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:97
+msgid "No"
+msgstr "No"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:90
+msgid "Image size in pixel - Default: 150"
+msgstr "Grandezza immagine in pixel - Predefinito: 150"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:91
+msgid "Image border in pixel - Default: 0"
+msgstr "Bordi dell'immagine in pixel - Predefinito: 0"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:92
+msgid "Pixel color - Default: ffffff"
+msgstr "Colore dei pixel - Predefinito: ffffff"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:93
+msgid "Background color - Default: 000000"
+msgstr "Colore di sfondo - Predefinito: 000000"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:94
+msgid "CSS class for the image"
+msgstr "Classe CSS per l'immagine"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:95
+msgid "Style tag for the image"
+msgstr "Tag \"style\" per l'immagine"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:96
+msgid "Alt tag for the image"
+msgstr "Tag \"alt\" per l'immagine"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:97
+msgid "Title tag for the image"
+msgstr "Tag \"title\" per l'immagine"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:100
+msgid "Examples"
+msgstr "Esempi"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:106
+msgid ""
+"If you have a high traffic site, you should save the generated QR Codes as "
+"images instead of using the dynamic codes, because generating them on the "
+"fly increases your server load."
+msgstr ""
+"Se hai un sito con un alto volume di traffico, si consiglia di salvare il QR "
+"Code generato come immagine invece di usare i QR Code dinamici in quanto la "
+"generazione \"on the fly\" aumenta sensibilmente il carico a danno del "
+"server."
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:107
+msgid "Customize User Interface"
+msgstr "Personalizza l'interfaccia utente"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:108
+msgid ""
+"<a href=\"http://www.internetloesungen.com/en/bedienoberflache-anpassen/\" "
+"target=\"_blank\">Here we show how to customize the design of the user "
+"interface.</a>"
+msgstr ""
+"<a href=\"http://www.internetloesungen.com/bedienoberflache-anpassen/\" "
+"target=\"_blank\">Qui si può trovare un tutorial su come personalizzare il "
+"design dell'interfaccia utente.</a>"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:163
+msgid "Your final Custom-QR-Code (save with right click)"
+msgstr "Il QR Code personalizzato (salva cliccando con il tasto destro)"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:164
+msgid ""
+"Are all data complete and correct? A once used QR-Token is spent after usage "
+"and can not be used again."
+msgstr ""
+"Tutti i dati inseriti sono completi e corretti? Una volta usato, il QR-Token "
+"non può essere utilizzato nuovamente."
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:165
+msgid "No QR-Token for final generation entered!"
+msgstr "Nessun QR-Token inserito!"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:166
+msgid "Save with right mouse click"
+msgstr "Salva cliccando con il tasto destro del mouse"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:167
+msgid "This is a test image with included errors."
+msgstr "Questa è un'immagine di prova con inclusi alcuni errori."
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:182
+msgid "Upload Logo"
+msgstr "Carica logo"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:183
+msgid ""
+"Here you can upload images with .png, .gif or .jpg extension. Best choice is "
+"PNG with alpha transparency. The logo will be inserted in the middle of the "
+"Custom-QR-Code."
+msgstr ""
+"Qui puoi caricare immagini con estensione .png, .gif oppure .jpg. Il "
+"consiglio è di caricare immagini in formato PNG, che permettono la "
+"trasparenza. Il logo verrà inserito al centro del QR Code personalizzato."
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:185
+msgid "Your Logo Image"
+msgstr "Il tuo logo"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:186
+msgid "Upload"
+msgstr "Carica"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:190
+msgid "QR Codes and Custom-QR-Codes"
+msgstr "QR Code e QR Code personalizzati"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:191
+msgid "QR Code"
+msgstr "QR Code"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:192
+msgid "Custom-QR-Code"
+msgstr "QR Code personalizzato"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:192
+msgid "qrinfo-en.png"
+msgstr "qrinfo-en.png"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:193
+msgid ""
+"<h2>QR Code</h2><p>QR Codes (Quick Response Codes) are coded graphics, that "
+"can be read by current smartphones and tablets with the appropriate "
+"software. They form a bridge between the real and the virtual world. "
+"Nowadays it's hard to find advertisements without this code. With one scan "
+"you are directed to a website, a product video or a download link in the App "
+"Store. Receive immediately information or the content you want, without "
+"having to type a link. Complete Business cards are imported within seconds. "
+"Even pre-formulated, pre-addressed mail and SMS as well as free text "
+"messages can be transmitted. With the enormous range of practical "
+"applications QR Codes are continuously gaining importance.</p><h2>Custom-QR-"
+"Code</h2><p>Here you can customize your QR Codes with your logo, a photo, a "
+"smiley or a short promotional text. In this way you create a recognition and "
+"give a personal touch to the code, so to stand out from other competitors.</"
+"p><p>Your graphic is positioned centrally and may cover a maximum of 30%, "
+"less is recommended in any case, so that old scanner can read this.</"
+"p><p>You can upload your logo in PNG, GIF and as JPEG. We recommend PNG "
+"because here you can use alpha channel transparency. You can adjust the size "
+"of the logo with a slider. You should test in any case directly on the "
+"screen using a smartphone, whether the generated code is still working or if "
+"there is too many image content covered.</p>"
+msgstr ""
+"<h2>QR-Code</h2><p>I QR Codes (Quick Response Codes) sono codici grafici, "
+"che possono essere letti dagli attuali smartphone e tablet tramite un "
+"apposito software. Essi costituiscono un ponte, un collegamento, tra la vita "
+"reale ed il mondo virtuale. Attualmente è difficile trovare inserzioni "
+"pubblicitarie senza un QR Code. Con una scansione si è redirezionati verso "
+"un sito web, un video o un link per il download. Ricevere immediatamente "
+"informazioni oppure il contenuto che si vuole, senza la necessità di "
+"scrivere un link. I classici biglietti da visita, in questo modo, sono "
+"importati in pochissimi istanti. Anche SMS e mail preparate precedentemente "
+"possono essere così inviate. Con un'infinita possibilità di applicazioni "
+"pratiche, i QR Codes stanno via via incrementando la propria importanza.</"
+"p><h2>QR Code personalizzati</h2><p>Si possono inoltre personalizzare i QR "
+"Codes con un proprio logo, una foto, uno smiley o un piccolo testo "
+"promozionale. In questo modo si può creare una grafica dedicata e dare un "
+"tocco \"personale\" al proprio codice.</p><p>L'elemento grafico è "
+"posizionato al centro e può coprire un massimo del 30% del QR Code, "
+"ovviamente una percentuale minore è sempre consigliata, cosìcché anche i "
+"vecchi scanner riescano a leggere il QR Code.</p><p>E' possibile caricare il "
+"proprio logo in formato PNF, GIF e JPEG. Si consiglia di utilizzare "
+"l'estensione PNG, perché permette di utilizzare le trasparenze. E' possibile "
+"configurare la grandezza del logo con un pratico selettore. In ogni caso si "
+"può testare la funzionalità del QR Code direttamente sul monitor del PC "
+"utilizzando uno smartphone e verificando che non vi siano errori.</p>"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:195
+msgid ""
+"<p>Important: For tests the content of the Custom-QR-Code is in some places "
+"illegible. To generate a Custom-QR-Code correctly, a QR-Token is required. "
+"You can get it for 4,99 €. You should use the QR-Token only when everything "
+"else suits you. The generated Custom-QR Code will be displayed on the "
+"website and we sent it by mail to the email address you entered by ordering. "
+"If you make a price comparison, you will find that this offer is extremely "
+"cheap. Typical prices for individualized QR Codes range from 50,- € to 100,- "
+"€.</p><p>The provider of the QR-Token is the company Hot-World GmbH & Co. "
+"KG. Payment is made securely through PayPal.</p>"
+msgstr ""
+"<p>Importante! Per generare un QR Code personalizzato e che funzioni "
+"correttamente è necessario un QR-Token. Si può ottenere un QR-Token per € "
+"4,99. Il QR Code personalizzato sarà visualizzato solo sul proprio sito web "
+"e verrà inviato per email all'indirizzo di posta elettronica inserito "
+"durante l'ordine. Ad una rapida comparazione dei prezzi, si può notare che "
+"questa offerta è particolarmente vantaggiosa. I prezzi per QR Codes "
+"personsalizzati variano in un rage che va da € 50 a € 100.</p><p> L'azienda "
+"che fornisce il QR-Token è la Hot-World GmbH & Co. KG. Il pagamento può "
+"essere effettuato in sicurezza tramite PayPal.</p>"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:196
+msgid ""
+"<p>The use of Custom-QR-Codes is free of charge and royalty. You can use "
+"your generated Custom-QR-Codes for free for personal and commercial use as "
+"well as for printing.</p>"
+msgstr ""
+"<p>L'utilizzo di un QR Code personalizzato è libero da royalty o altri "
+"oneri. Si può utilizzare il QR Code personalizzato sia per uso personale, "
+"che per uso commerciale, anche stampato.</p>"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:200
+msgid "QR Code Generator 4 All"
+msgstr "QR Code Generator 4 All"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:204
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:212
+msgid "Text"
+msgstr "Testo"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:205
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:248
+msgid "URL"
+msgstr "URL"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:206
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:223
+msgid "Email"
+msgstr "E-Mail"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:207
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:309
+msgid "Telephone"
+msgstr "Telefono"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:208
+msgid "SMS"
+msgstr "SMS"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:209
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:245
+msgid "Business Card"
+msgstr "Biglietto da visita"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:214
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:241
+msgid "chars left"
+msgstr "Caratteri rimasti"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:218
+msgid "Link"
+msgstr "Link"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:225
+msgid "Subject"
+msgstr "Oggetto"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:227
+msgid "Message"
+msgstr "Messaggio"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:232
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:237
+msgid "Telephone Number"
+msgstr "Numero di telefono"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:239
+msgid "SMS Message"
+msgstr "Messaggio SMS"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:246
+msgid "Formatted Name"
+msgstr "Nome formattato"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:247
+msgid "Company Name"
+msgstr "Nome Azienda"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:249
+msgid "Title"
+msgstr "Titolo"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:250
+msgid "Surname"
+msgstr "Cognome"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:251
+msgid "First Name"
+msgstr "Nome"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:252
+msgid "Image URL"
+msgstr "URL immagine"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:253
+msgid "Address Type"
+msgstr "Indirizzo"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:253
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:263
+msgid "Work"
+msgstr "Lavoro"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:253
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:264
+msgid "Home"
+msgstr "Casa"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:254
+msgid "Post Office"
+msgstr "Casella Postale"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:255
+msgid "Extended Address"
+msgstr "Indirizzo esteso"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:256
+msgid "Street"
+msgstr "Via"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:257
+msgid "Postal Code"
+msgstr "Codice Postale (CAP)"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:258
+msgid "City"
+msgstr "Città"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:259
+msgid "Region"
+msgstr "Provincia"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:260
+msgid "Country Name"
+msgstr "Stato"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:261
+msgid "Telephone #1"
+msgstr "Telefono #1"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:265
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:275
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:285
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:295
+msgid "Mobile Work"
+msgstr "Cellulare Lavoro"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:266
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:276
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:286
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:296
+msgid "Mobile Private"
+msgstr "Cellulare Privato"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:267
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:277
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:287
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:297
+msgid "Fax Work"
+msgstr "Fax Lavoro"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:268
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:278
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:288
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:298
+msgid "Fax Home"
+msgstr "Fax Privato"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:271
+msgid "Telephone #2"
+msgstr "Telefono #2"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:273
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:283
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:293
+msgid "Phone Work"
+msgstr "Telefono Lavoro"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:274
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:284
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:294
+msgid "Phone Home"
+msgstr "Telefono Privato"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:281
+msgid "Telephone #3"
+msgstr "Telefono #3"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:291
+msgid "Telephone #4"
+msgstr "Telefono #4"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:301
+msgid "Email (Work)"
+msgstr "E-Mail (Lavoro)"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:302
+msgid "Email (Home)"
+msgstr "E-Mail (Privato)"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:306
+msgid "Link: http://"
+msgstr "Link: http://"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:307
+msgid "Link save: https://"
+msgstr "Link sicuro: https://"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:308
+msgid "Email: mailto:"
+msgstr "E-Mail: mailto:"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:315
+msgid "Standard QR Code"
+msgstr "QR Code Standard"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:316
+msgid "Custom-QR-Code with your Logo"
+msgstr "QR Code personalizzato con il tuo logo"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:317
+msgid "QR Code Info"
+msgstr "Informazioni sul QR Code"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:322
+msgid "Size"
+msgstr "Dimensione"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:323
+msgid "Border"
+msgstr "Bordo"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:324
+msgid "Foreground&nbsp;Color"
+msgstr "Colore in primo piano"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:325
+msgid "Background&nbsp;Color"
+msgstr "Colore di sfondo"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:326
+msgid "Logo"
+msgstr "Logo"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:326
+msgid "Upload new Logo"
+msgstr "Carica un nuovo logo"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:327
+msgid "Logo&nbsp;Size"
+msgstr "Dimensioni logo"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:329
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:332
+msgid "Update"
+msgstr "Aggiorna"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:332
+msgid "QR-Token to create Custom-QR-Codes with logo available here."
+msgstr "Il QR-Token per creare QR Code personalizzati è disponibile qui."
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:333
+msgid "QR-Token"
+msgstr "QR-Token"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:333
+msgid "Generate final Custom-QR-Code"
+msgstr "Generare QR Code personalizzato finale"
+
+#: c:\www\wordpress\wp-content\plugins\qrgen4all/qrgen4all.php:339
+msgid ""
+"Private and commercial use and printing are allowed.<br/>&quot;QR Code&quot; "
+"is a registered trademark of <a href=\"http://www.denso-wave.com/en/adcd/\" "
+"target=\"_blank\" rel=\"nofollow\">DENSO WAVE</a> INCORPORATED"
+msgstr ""
+"Uso privato e commerciale e la stampa ammessi.<br/>&quot;QR Code&quot; è un "
+"marchio registrato di <a href=\"http://www.denso-wave.com/en/adcd/\" target="
+"\"_blank\" rel=\"nofollow\">DENSO WAVE</a> INCORPORATED."
+
+#~ msgid ""
+#~ "&quot;QR Code&quot; is a registered trademark of <a href=\"http://www."
+#~ "denso-wave.com/en/adcd/\" target=\"_blank\" rel=\"nofollow\">DENSO WAVE</"
+#~ "a> INCORPORATED"
+#~ msgstr ""
+#~ "&quot;QR Code&quot; ist ein eingetragenes Markenzeichen von <a href="
+#~ "\"http://www.denso-wave.com/en/adcd/\" target=\"_blank\" rel=\"nofollow"
+#~ "\">DENSO WAVE</a> INCORPORATED."
+
+#~ msgid "Family Name"
+#~ msgstr "Nachname"
+
+#~ msgid "Given Name"
+#~ msgstr "Vorname"
+
+#~ msgid "Photograph URL"
+#~ msgstr "Foto URL"
+
+#~ msgid "Max.&nbsp;Cover"
+#~ msgstr "Max.&nbsp;Abdeckung"

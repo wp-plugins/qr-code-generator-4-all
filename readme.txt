@@ -3,8 +3,8 @@ Contributors: internetloesungen
 Donate link:
 Tags: QR Code
 Requires at least: 3.4.0
-Tested up to: 3.5.0
-Stable tag: 1.0.8
+Tested up to: 3.4.2
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,6 +48,7 @@ The plugin provides the following features:
 * German
 * Dutch
 * Japanese
+* Italian
 * Easy to translate into other languages. <a href="http://www.internetloesungen.com/en/plugins-ubersetzen/" target="_blank">Translation instructions</a>
 
 &quot;QR Code&quot; is a registered trademark of <a href="http://www.denso-wave.com/en/adcd/" target="_blank" rel="nofollow">DENSO WAVE</a> INCORPORATED.
@@ -64,6 +65,10 @@ Yes, private and commercial use and printing are allowed.
 2. QR Code editor.
 
 == Changelog ==
+
+= 1.0.9 =
+
+* Added new language: italian.
 
 = 1.0.8 =
 
