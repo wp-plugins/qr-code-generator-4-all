@@ -4,7 +4,7 @@ Donate link:
 Tags: QR Code
 Requires at least: 3.4.0
 Tested up to: 3.5.1
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,7 +66,7 @@ Yes, private and commercial use and printing are allowed.
 
 == Changelog ==
 
-= 1.0.9 =
+= 1.0.10 =
 
 * Added new language: italian.
 
