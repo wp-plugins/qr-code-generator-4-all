@@ -28,6 +28,28 @@ add_action( 'init', 'qrgen4_plugin_init' );
 add_action( 'admin_menu', 'qrgen4all_plugin_menu' );
 add_shortcode('qrgen4all', 'qrgen4all_qrcode_shortcode');
 add_shortcode('qrgen4allEditor', 'qrgen4all_editor');
+register_activation_hook( __FILE__, 'qrgen4all_install' );
+
+function qrgen4all_install() {
+  global $wpdb;
+  $table_name = $wpdb->prefix."qrgen4all_uploads";
+    $sql = "CREATE TABLE " . $table_name . " (
+    id MEDIUMINT(9) AUTO_INCREMENT,
+    created DATETIME NOT NULL,
+    file VARCHAR(200) NOT NULL,
+    PRIMARY KEY  (id)
+    );";
+/* CREATE TABLE `wordpress`.`wp_qrgen4all_uploads` (
+  `id` INT NOT NULL,
+  `created` DATETIME NOT NULL,
+  `file` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = MyISAM
+DEFAULT CHARACTER SET = utf8;
+ * */
+    require_once(ABSPATH.'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
+}
 
 function qrgen4all_plugin_options() {
 	if ( !current_user_can( 'manage_options' ) )  {
@@ -36,37 +58,9 @@ function qrgen4all_plugin_options() {
   $lang = get_bloginfo("language");
   if(strlen($lang)>2) $lang = substr($lang,0,2);	
   
-  $sexpire="";
-  $stoken = get_option('qrgen4all_sitetoken');
-  if($stoken!="")  {
-    $arr = explode("_",$stoken);
-    if(count($arr)==3) {
-      $date = new DateTime($arr[1]);
-      $sexpire = "<br/>".sprintf(__('Valid until %s','qrgen4'),$date->format("F d, Y"));
-    }
-  }
 	?>
 <div class="wrap">
 <h1>QR Code Generator 4 All</h1>
-<h2><?php _e('Free Custom-QR-Codes for your users','qrgen4')?></h2>
-<?php printf(__('Normally users need a QR-Token to create a Custom-QR-Code. If you want to offer this for free to your users, you need a QR-Site-Token. You can get them <a href="%s" target="_blank">here</a>.','qrgen4'),'http://www.internetloesungen.com/wpde/wp-content/plugins/qrgen4allpro/shop/shopsite.php?lang='.$lang."&st=".urlencode(get_option('qrgen4all_sitetoken'))) ?>
-
-<form method="post" action="options.php"><?php wp_nonce_field('update-options');settings_fields( 'qrgen4-settings-group' ); ?>
-<table class="form-table">
-<tr valign="top">
-<th scope="row"><?php _e('QR-Site-Token','qrgen4')?></th>
-<td><input type="text" name="qrgen4all_sitetoken" value="<?php echo get_option('qrgen4all_sitetoken'); ?>" size="80" /><?php echo $sexpire; ?></td>
-</tr>
-</table>
-<p class="submit">
-<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
-</p>
-<input type="hidden" name="page_options" value="qrgen4all_sitetoken" />
-<input type="hidden" name="action" value="update" />
-</form>
-<?php if(!iscurlinstalled()) { 
-_e('<h2 style="color:red">CURL library for php not installed/activated</h2><p>Custom-QR-Codes require communication with our server. This happens with the curl extension of php. Please install the extension for the full functionality.</p><p>For windows check the php.ini and search for ";extension=php_curl.dll" and remove the semicolon. Restart apache.</p><p>For Linux it depends on the distribution. For Debien, Ubuntu and clones use:</p><div style="font-family:Courier New;background:#ececec;padding:10px;margin-bottom:10px">apt-get install php5-curl<br/>/etc/init.d/apache2 restart</div><p>For suse it is:</p><div style="font-family:Courier New;background:#ececec;padding:10px;margin-bottom:10px">zypper in php5-curl<br/>rcapache2 restart</div><p>and for Red Hat, Fedora and Centos:</p><div style="font-family:Courier New;background:#ececec;padding:10px;margin-bottom:10px">yum install php-curl</div>','qrgen4');
- } ?>
 <h2><?php _e('Implementation','qrgen4')?></h2>
 <h3><?php _e('QR Code Generator','qrgen4')?></h3>
 <p><?php _e('To implement the free configurable QR Code Generator, you just need to embed the following code:','qrgen4')?></p>
@@ -172,6 +166,7 @@ function qrgen4all_editor($attr) {
   wp_enqueue_style('qrgen4all-colorpicker', plugins_url( 'jquery-miniColors/jquery.miniColors.css' , __FILE__ ));
   wp_enqueue_style('qrgen4all-ui', plugins_url( 'ui/css/ui.css' , __FILE__ ));
   $uri = plugins_url( 'qr.php' , __FILE__ );
+  $uripro = plugins_url( 'qrpro.php' , __FILE__ );
   $path = plugins_url('',__FILE__);
   //$prouri = "http://www.internetloesungen.com/wpde/wp-content/plugins/qrgen4allpro/";
   $uploaduri = plugins_url( 'upload.php' , __FILE__ );
@@ -179,6 +174,7 @@ function qrgen4all_editor($attr) {
   if(strlen($lang)>2) $lang = substr($lang,0,2);	
   $o="";
 ?>
+<script type="text/javascript">window.qr4all_prourl="<?php echo $uripro ?>";</script>
   <div id="qrgen4_upload_dialogl" title="<?php _e('Upload Logo','qrgen4')?>" style="text-align:left;font-size:12px;line-height:18px;">
   <p><?php _e('Here you can upload images with .png, .gif or .jpg extension. Best choice is PNG with alpha transparency. The logo will be inserted in the middle of the Custom-QR-Code.','qrgen4')?></p>
 	<p><form action="<?php echo $uploaduri ?>" id="qrgen4_upload_form" method="POST" enctype="multipart/form-data">
@@ -329,13 +325,13 @@ _e('<p>The use of Custom-QR-Codes is free of charge and royalty. You can use you
 <tr><td colspan="2"><input type="submit" value="<?php _e('Update','qrgen4')?>"/>
 <input type="hidden" name="token" id="qrgen4_token" value="<?php echo $customtoken;?>"/></td></tr> 
 <?php } else { ?>
-<tr><td colspan="2"><input type="submit" value="<?php _e('Update','qrgen4')?>"/>  <span class="qrgen4_prodata" style="white-space:nowrap;display:none"><a href="http://www.internetloesungen.com/wpde/wp-content/plugins/qrgen4allpro/shop/shop.php?lang=<?php echo $lang;?>" target="_blank" style="font-weight:bold;margin-left:20px"><?php _e('QR-Token to create Custom-QR-Codes with logo available here.','qrgen4')?></a></span></td></tr>
-<tr class="qrgen4_prodata" style="display:none"><td><a href="http://www.internetloesungen.com/wpde/wp-content/plugins/qrgen4allpro/shop/shop.php?lang=<?php echo $lang;?>" target="_blank"><?php _e('QR-Token','qrgen4')?></a>: </td><td><input type="text" name="token" id="qrgen4_token" size="25"/> <button id="qrgen4_sendtoken" onclick="qrgen4all_update_token(true)"><?php _e('Generate final Custom-QR-Code','qrgen4')?></button></td></tr> 
+<tr><td colspan="2"><input type="submit" value="<?php _e('Update','qrgen4')?>"/>  </td></tr> 
 <?php } ?></table>
 </form>
 </div>
 <div id="qrgen4_output" style="text-align:center;margin:8px"><img src="<?php echo $uri ?>?size=200&margin=0"/></div>
 <div id="qrgen4_outputpro" style="text-align:center;margin:8px"></div>
+<div style="width:100%;text-align:center;margin:10px 0"><a href="http://www.qrcustomizerpro.com" target="_blank" style="text-decoration:none">Powered by <strong>QR Customizer Pro</strong> - Try it now for free!<br/>Design examples made with QR Customizer Pro:<br/><img src="http://www.qrcustomizerpro.com/qr/qr1.gif" style="height:248px;width:398px;border:0;margin-top:10px" title="Designed with QR Customizer Pro" /></a></div> 
 <div style="font-size:10px;line-height:12px"><?php _e('Private and commercial use and printing are allowed.<br/>&quot;QR Code&quot; is a registered trademark of <a href="http://www.denso-wave.com/en/adcd/" target="_blank" rel="nofollow">DENSO WAVE</a> INCORPORATED','qrgen4')?></div>
 </fieldset></div>
 <?php

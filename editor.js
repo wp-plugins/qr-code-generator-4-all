@@ -1,4 +1,4 @@
-var qr4all_prourl = 'http://www.internetloesungen.com/wpde/wp-content/plugins/qrgen4allpro/qrpro.php';
+//var qr4all_prourl = 'http://www.internetloesungen.com/wpde/wp-content/plugins/qrgen4allpro/qrpro.php';
 var qrgen4all_timer = null;
 var qrgen4all_logoname = 'default.png';
 var qrgen4all_last_tp = 1;
@@ -14,10 +14,10 @@ qrgen4all_vc_escape = function(text) {
 }
 
 qrgen4all_update = function() {
-  qrgen4all_update_token(false);
+  qrgen4all_update_token();
   return false;
 }
-qrgen4all_update_token = function(sendtoken) {
+qrgen4all_update_token = function() {
   qrgen4all_timer = null;
   var sel = jQuery('input[name=tp]:checked', '#qrgen4all').val();
   if(sel) qrgen4all_last_tp = sel; else sel = qrgen4all_last_tp;
@@ -74,7 +74,6 @@ qrgen4all_update_token = function(sendtoken) {
   } 
   var pro = jQuery('input[name=pro]:checked', '#qrgen4all').val();
   if(pro) {pro = pro==2;qrgen4all_last_cust = pro;} else pro = qrgen4all_last_cust;
-  var sitetoken =  jQuery('#qrgen4_token').val().indexOf('S') == 0;
   var tosend;
   if(pro) {
     tosend = {
@@ -85,7 +84,6 @@ qrgen4all_update_token = function(sendtoken) {
       lsize:jQuery('#qrgen4_logosize_out').html(),
       logo:qrgen4all_logoname,
       ecc:3,
-      token:(sendtoken || sitetoken ? jQuery('#qrgen4_token').val():''),
       data:data
     };
   } else {
@@ -101,16 +99,7 @@ qrgen4all_update_token = function(sendtoken) {
   var src = (pro ? qr4all_prourl : jQuery('#qrgen4all').attr('action'))+'?'+encoded;
   var mw = jQuery('#qrgen4_box').width()-20;
   if(jQuery('#qrgen4_size_out').html()<mw) mw=jQuery('#qrgen4_size_out').html();
-  if(sendtoken && pro && jQuery('#qrgen4_token').val()!='') {
-    if(confirm(qrgen.confirmTokenUse)) {
-      jQuery('#qrgen4_outputpro').html("<p style=\"text-align:left;font-weight:bold\">"+qrgen.saveQR+":</p><img src=\""+src+"\" style=\"width:"+mw+"px;height:"+mw+"px\" title=\""+qrgen.saveQR+"\"/>");
-      if(!sitetoken)
-        jQuery('#qrgen4_token').val("");
-    }
-  } else {
-    if(sendtoken) alert(qrgen.noToken);
-    else jQuery('#qrgen4_output').html("<img src=\""+src+"\" style=\"width:"+mw+"px;height:"+mw+"px\" title=\""+(pro && !sitetoken ? qrgen.demoImage : qrgen.saveTitle)+"\"/>");
-  }
+  jQuery('#qrgen4_output').html("<img src=\""+src+"\" style=\"width:"+mw+"px;height:"+mw+"px\" title=\""+qrgen.saveTitle+"\"/>");
   return false;  
 }
 qrgen4all_select = function() {

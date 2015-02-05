@@ -3,8 +3,8 @@ Contributors: internetloesungen
 Donate link:
 Tags: QR Code
 Requires at least: 3.4.0
-Tested up to: 3.5.1
-Stable tag: 1.0.10
+Tested up to: 4.1.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,10 @@ Yes, private and commercial use and printing are allowed.
 
 == Changelog ==
 
+= 1.1.0 =
+
+* QR codes with image are now free.
+
 = 1.0.10 =
 
 * Added new language: italian.
@@ -100,6 +104,14 @@ Yes, private and commercial use and printing are allowed.
 * Initial version.
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+
+* QR codes with image are now free.
+
+= 1.0.10 =
+
+* Added new language: italian.
 
 = 1.0.8 =
 
