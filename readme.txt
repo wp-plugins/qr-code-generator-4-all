@@ -4,7 +4,7 @@ Donate link:
 Tags: QR Code
 Requires at least: 3.4.0
 Tested up to: 4.1.0
-Stable tag: 1.1.0
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,7 +66,7 @@ Yes, private and commercial use and printing are allowed.
 
 == Changelog ==
 
-= 1.1.0 =
+= 2.0.0 =
 
 * QR codes with image are now free.
 
@@ -105,7 +105,7 @@ Yes, private and commercial use and printing are allowed.
 
 == Upgrade Notice ==
 
-= 1.1.0 =
+= 2.0.0 =
 
 * QR codes with image are now free.
 
